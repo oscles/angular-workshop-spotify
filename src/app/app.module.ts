@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 // do request http
 import { HttpClientModule } from '@angular/common/http';
 
+// pipes
+import { NotImagesPipe } from './pipes/not-images.pipe';
+import { SecureDomPipe } from './pipes/secure-dom.pipe';
+
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,7 +17,6 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 // routes
 import { SpotifyRoutes } from './app.routes';
-import { NotImagesPipe } from './pipes/not-images.pipe';
 import { TarjetaComponent } from './components/shared/tarjeta/tarjeta.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
@@ -29,10 +32,12 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     ArtistComponent,
     SearchComponent,
     NavbarComponent,
-    NotImagesPipe,
     TarjetaComponent,
     FooterComponent,
-    LoadingComponent
+    LoadingComponent,
+
+    NotImagesPipe,
+    SecureDomPipe,
   ],
   // include routes and request httpclient
   imports: [

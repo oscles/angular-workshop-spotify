@@ -1,11 +1,14 @@
-<div class="row">
-  <div class="col">
-    <input type="text" class="form-control"
-    #inputUser
-    (keyup)="search(inputUser.value)"
-    placeholder="Search artist">
+<div class="container">
+  <div class="container">
+    <div class="col">
+      <input type="text" class="form-control" #inputUser (keyup)="search(inputUser.value)" placeholder="Search artist">
+    </div>
+  </div>
+  <div class="m-5"></div>
+  <div class="row">
+    <div class="container">
+      <app-tarjeta [items]="artists"></app-tarjeta>
+      <app-loading *ngIf="loading"></app-loading>
+    </div>
   </div>
 </div>
-<div class="m-5"></div>
-<app-tarjeta [items]="artists"></app-tarjeta>
-<app-loading *ngIf="loading"></app-loading>

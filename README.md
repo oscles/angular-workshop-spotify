@@ -4,24 +4,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Requirements
+- Create an account in the spotify API https://developer.spotify.com/dashboard/login
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Edit the file that is on the route /app/service/spotify.service.tc, you will find this function
 
-## Build
+  getQuery(param: string) {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQBjcMCXauNJFwhMgfl7a52ZSKZxPgofCexKCvWI5TSx4OSeeloB015iTH3Bdn87576xtDlyPeWtrFneeO7l9eh__oJQpHFHamzSg83DBffTkrWuOpdDuizHgd1zC_EJnE6gEx8QTpltv_8Krw7kvxo9d2NJaNzaIOg'
+    });
+    xxxxxxxxxxxxx
+  }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- In the Authorization part add the token obtained from the API, the format of the token is the following:
+Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

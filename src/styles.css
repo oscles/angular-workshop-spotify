@@ -9,6 +9,10 @@ hr {
     border-color: white;
 }
 
+footer > * {
+    color: black;
+}
+
 .puntero {
     cursor: pointer;
 }
@@ -66,3 +70,9 @@ hr {
     animation-name: fadeIn;
 }
 
+.see_artist a {
+    background-color: #1db954;
+    color: #fff;
+    padding: .4em;
+    border-radius: 20px;
+}

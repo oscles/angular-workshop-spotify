@@ -1,50 +1,43 @@
-<app-loading *ngIf="loading"></app-loading>
+<div class="container">
+    <app-loading *ngIf="loading"></app-loading>
 
-<div class="row animated fadeIn" *ngIf="!loading">
-  <div class="col-2">
-    <img class="img-thumbnail img-circle" [src]="artist.images | notImages" [alt]="artist.name">
-  </div>
-  <div class="col">
-    <h3>{{ artist.name }}</h3>
-    <p>
-      <a [href]="artist.external_urls.spotify" target="__blank">see artist's page</a>
-    </p>
-  </div>
-  <div class="col-4 text-right">
-      <button class="btn btn-outline-danger" routerLink="/search">Back</button>
-  </div>
+    <div class="row animated fadeIn" *ngIf="!loading">
+      <div class="col-2">
+        <img class="img-thumbnail img-circle" [src]="artist.images | notImages" [alt]="artist.name">
+      </div>
+      <div class="col">
+        <h3>{{ artist.name }}</h3>
+        <p class="see_artist">
+          <a [href]="artist.external_urls.spotify" target="__blank">see artist's page</a>
+        </p>
+      </div>
+      <div class="col-4 text-right">
+          <button class="btn btn-outline-danger" routerLink="/search">Back</button>
+      </div>
+    </div>
+    <!-- Track list-->
+    <div class="row my-5">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Photo</th>
+            <th scope="col">Album</th>
+            <th scope="col">Song</th>
+            <th scope="col">Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track of trackTopArtist">
+            <th scope="row"><img [src]="track.album.images[2].url" [alt]="track.name"></th>
+            <td>{{ track.album.name }}</td>
+            <td>{{ track.name }}</td>
+            <td><iframe [src]=" getUrlTrack(track.id) | secureDom" width="300" height="80"
+              frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- end track list-->
+    
+    
 </div>
-
-<div class="container my-5">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Photo</th>
-        <th scope="col">Album</th>
-        <th scope="col">Song</th>
-        <th scope="col">Preview</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
